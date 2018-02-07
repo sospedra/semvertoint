@@ -14,7 +14,7 @@
     "build": "babel src/ -d lib/",
     "prepublish": "yarn run build",
     "test:types": "yarn run flow",
-    "test:unit": "jest tests/",
+    "test:unit": "jest tests/ --collectCoverage",
     "test": "npm run test:types && npm run test:unit"
   },
   "name": "semvertoint",

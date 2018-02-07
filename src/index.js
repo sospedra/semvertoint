@@ -9,7 +9,7 @@ const parseWithExponent = (base: number, exponent: number): number => {
 
 const semverToInt = (semver: string, base:number = 10) => {
   const [mayor, minor, patch] = semver.split('.').map(parseIntBase10)
-  const baseInt = parseIntBase10(base)
+  const baseInt = Math.ceil(base / 2) * 2 // is always an even integer number
   const mayorInt = parseWithExponent(mayor, 10 ** baseInt)
   const minorInt = parseWithExponent(minor, 10 ** (baseInt / 2))
   

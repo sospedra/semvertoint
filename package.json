@@ -3,14 +3,19 @@
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-flow": "^6.23.0",
-    "flow-bin": "^0.65.0"
+    "flow-bin": "^0.65.0",
+    "jest": "^22.1.4"
   },
   "main": "lib/index.js",
-  "files": ["lib/"],
+  "files": [
+    "lib/"
+  ],
   "scripts": {
     "build": "babel src/ -d lib/",
     "prepublish": "yarn run build",
-    "test": "yarn run flow"
+    "test:types": "yarn run flow",
+    "test:unit": "jest tests/",
+    "test": "npm run test:types && npm run test:unit"
   },
   "name": "semvertoint",
   "description": "Safely convert any semver to an integer for easy comparisons",

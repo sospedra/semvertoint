@@ -7,7 +7,7 @@ const parseWithExponent = (base: number, exponent: number): number => {
   return base * exponent + exponent
 }
 
-const semverToInt = (semver: string, base:number = 6) => {
+const semverToInt = (semver: string, base:number = 10) => {
   const [mayor, minor, patch] = semver.split('.').map(parseIntBase10)
   const baseInt = parseIntBase10(base)
   const mayorInt = parseWithExponent(mayor, 10 ** baseInt)
@@ -15,4 +15,6 @@ const semverToInt = (semver: string, base:number = 6) => {
   
   return mayorInt + minorInt + patch
 }
+
+module.exports = semverToInt
 

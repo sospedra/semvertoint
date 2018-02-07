@@ -15,7 +15,7 @@ Safely convert any semver to an integer for easy comparisons in 677 Bytes
 ```js
 import semverToInt from 'semvertoint'
 
-semverToInt('12.0.1') //
+semverToInt('12.0.1') // 130000100001
 semverToInt('190.10.0') > semverToInt('190.09.9999') // true
 semverToInt(require('./package.json').version)
 ```

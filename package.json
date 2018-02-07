@@ -1,0 +1,36 @@
+{
+  "devDependencies": {
+    "flow-bin": "^0.65.0",
+    "flow-remove-types": "^1.2.3"
+  },
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "flow-remove-types src/ -d lib/",
+    "prepublish": "yarn run build"
+  },
+  "name": "semvertoint",
+  "description": "Safely convert any semver to an integer for easy comparisons",
+  "version": "1.0.0",
+  "dependencies": {
+    "babylon": "^6.18.0",
+    "vlq": "^0.2.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sospedra/semvertoint.git"
+  },
+  "keywords": [
+    "semver",
+    "int",
+    "compare",
+    "parse",
+    "semvertoint",
+    "integer"
+  ],
+  "author": "sospedra",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sospedra/semvertoint/issues"
+  },
+  "homepage": "https://github.com/sospedra/semvertoint#readme"
+}

@@ -23,3 +23,24 @@ semverToInt(require('./package.json').version)
 Very useful to be combined with migrations policies, changelogs, etc.
 You'll only need to mantain the `package.json` version (for example) and use it for all the historic changes that you need!
 
+#### Custom base
+
+In case you need more digits (moar?) or maybe less (less?!!) you specify a custom base:
+
+```js
+semverToInt('13.3.7') // 140000400007
+semverToInt('13.3.7', 12) // 14000004000007
+```
+
+You might need this if you have humongous numbers
+
+```js
+// this is wrong
+semverToInt('13.300000.7') // 170000100007
+// becuase is greater than
+semverToInt('15.0.0') // 150000100000
+// but you can increase the base
+semverToInt('13.300000.7', 12) // 14300001000007
+semverToInt('14.0.0', 12) // 15000001000000
+```
+
